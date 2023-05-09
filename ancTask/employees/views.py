@@ -4,8 +4,6 @@ from django.shortcuts import render
 from .models import Employee
 from django.http import JsonResponse
 from django.views import View
-from django.views.generic import TemplateView
-from django.http import HttpResponse
 
 
 class EmployeeHierarchyJson(View):

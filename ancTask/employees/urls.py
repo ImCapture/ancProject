@@ -1,6 +1,4 @@
-import django.views.generic
-from employees import views
-from employees.views import EmployeeHierarchyJson
+from .views import EmployeeHierarchyJson
 from django.urls import path
 from django.views.generic import TemplateView
 
