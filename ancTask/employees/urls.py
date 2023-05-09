@@ -1,7 +1,11 @@
+import django.views.generic
 from employees import views
+from employees.views import EmployeeHierarchyJson
 from django.urls import path
+from django.views.generic import TemplateView
+
 
 urlpatterns = [
-    path('employee_hierarchy/', views.employee_hierarchy_view, name='employee_hierarchy_view'),
-    path('employee_hierarchy_json/', views.employee_hierarchy_json, name='employee_hierarchy_json'),
+    path('', TemplateView.as_view(template_name='employees/sheets/employee_hierarchyBS.html'), name='employee_hierarchy'),
+    path('employee_hierarchy_json/', EmployeeHierarchyJson.as_view(), name='employee_hierarchy_json'),
 ]
