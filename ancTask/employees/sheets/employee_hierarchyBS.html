@@ -21,6 +21,13 @@
         <link rel="stylesheet" href="/static/jstree/dist/themes/default-dark/style.min.css">
     {% endif %}
 
+            <!-- DataTables CSS -->
+    {% if "datatables.net-dt/css/jquery.dataTables.min.css" not in block.super %}
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.css" />
+    {% else %}
+        <link rel="stylesheet" href="/static/datatables.net-dt/css/jquery.dataTables.min.css" />
+    {% endif %}
+
     <style>
         .jstree-default li {
             margin-left: 20px;
@@ -57,6 +64,14 @@
     {% else %}
         <script src="/static/jstree/dist/jstree.js"></script>
     {% endif %}
+
+           <!-- DataTables JS -->
+    {% if "datatables.net-dt/js/dataTables.dataTables.min.js" not in block.super %}
+        <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.js"></script>
+    {% else %}
+        <script src="/static/datatables.net/js/jquery.dataTables.min.js"></script>
+    {% endif %}
+
 
     <h1 class="text-center mt-2 mb-4">Employee Hierarchy</h1>
 
