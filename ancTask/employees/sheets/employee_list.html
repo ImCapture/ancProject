@@ -91,9 +91,12 @@
     </table>
 
     <script>
-
+    $(document).ready(function() {
         $('#employee_table').DataTable({
-            data: [{"name": "Kenneth Jackson", "position": "Teacher, adult education", "email": "padillajoshua@example.com", "date_joined": "2023-02-01T06:56:16Z"}, {"name": "Elizabeth Chung", "position": "Chemical engineer", "email": "millerandrea@example.org", "date_joined": "2023-01-03T18:32:10Z"}],
+            'ajax': {
+                url: '{% url "employee_list_json" %}',
+                dataSrc: ''
+            },
             "columns": [
                 {data: 'name'},
                 {data: 'position'},
@@ -101,7 +104,7 @@
                 {data: 'date_joined'}
             ]
         });
-
+    });
     </script>
 </body>
 </html>
